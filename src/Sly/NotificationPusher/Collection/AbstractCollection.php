@@ -32,7 +32,7 @@ abstract class AbstractCollection implements IteratorAggregate, Countable
      * @inheritdoc
      * @return ArrayIterator|SeekableIterator
      */
-    abstract public function getIterator();
+    abstract public function getIterator(): ArrayIterator|SeekableIterator;
 
     /**
      * @param string $key Key
@@ -47,7 +47,7 @@ abstract class AbstractCollection implements IteratorAggregate, Countable
     /**
      * @return integer
      */
-    public function count()
+    public function count(): int
     {
         return $this->getIterator()->count();
     }
